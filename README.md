@@ -17,15 +17,7 @@ The Crypto Trade Alerts project is a utility tool designed to provide trading al
 
 ## Dependencies
 
-Located in the requirements.txt file:
-
-- google.cloud
-- pandas
-- pytz
-- requests
-- tweepy
-
-Make sure these packages are installed and accessible in your Python environment before using the `alert` function.
+Make sure the packages located in requirements.txt are installed and accessible in your Python environment before using the `alert` function.
 
 ## Alert Module
 

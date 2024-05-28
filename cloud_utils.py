@@ -1,5 +1,6 @@
 import os
 from google.cloud import storage
+from dotenv import load_dotenv
 
 def fetch_data(ticker_symbol, key_path="service_account_credentials.json"):
     """
@@ -14,7 +15,7 @@ def fetch_data(ticker_symbol, key_path="service_account_credentials.json"):
         None
     """
     storage_client = storage.Client.from_service_account_json(key_path)
-
+    load_dotenv()
     bucket_name = os.getenv('GOOGLE_CLOUD_BUCKET_NAME')
     if not bucket_name:
         raise ValueError("Bucket name is not set in the environment variable 'GOOGLE_CLOUD_BUCKET_NAME'")
@@ -37,7 +38,7 @@ def upload_data(ticker_symbol):
     """
     key_path = "service_account_credentials.json"
     storage_client = storage.Client.from_service_account_json(key_path)
-
+    load_dotenv()
     bucket_name = os.getenv('GOOGLE_CLOUD_BUCKET_NAME')
     if not bucket_name:
         raise ValueError("Bucket name is not set in the environment variable 'GOOGLE_CLOUD_BUCKET_NAME'")

@@ -1,2 +1,4 @@
 .env
 service_account_credentials.json
+data
+__pycache__

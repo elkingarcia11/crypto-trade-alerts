@@ -1,5 +1,6 @@
 import os
 import tweepy
+from dotenv import load_dotenv
 
 def tweet(message):
     """
@@ -11,6 +12,7 @@ def tweet(message):
     Returns:
         None
     """
+    load_dotenv()
     try:
         client = tweepy.Client(
             bearer_token=os.getenv('TWITTER_BEARER_TOKEN'),

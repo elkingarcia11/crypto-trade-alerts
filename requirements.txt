@@ -3,3 +3,5 @@ pandas
 pytz
 requests
 tweepy
+numpy
+dotenv

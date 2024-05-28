@@ -10,16 +10,17 @@ def published_vwap_strategy(ticker_symbol):
     Returns:
         str or None: The trading decision. Can be 'BUY', 'SELL', or None if no action is recommended.
     """
-    data = pd.read_csv(f'data/{ticker_symbol}_WITH_INDICATORS.csv')
+    data = pd.read_csv(f'data/{ticker_symbol}.csv')
     # Get the latest entry
     latest_entry = data.iloc[-1]
     
     # Decision based on latest price and VWAP
     if latest_entry['Close'] < latest_entry['VWAP']:
-        decision = 'BUY'
+        print("BUY")
+        return 'BUY'
+        
     elif latest_entry['Close'] > latest_entry['VWAP']:
-        decision = 'SELL'
+        print("SELL")
+        return 'SELL'
     else:
-        decision = None
-    
-    return decision
+        print("HOLD")

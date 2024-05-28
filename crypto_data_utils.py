@@ -73,6 +73,8 @@ def fetch_and_save_latest_data(ticker_symbol):
             
             # Save to CSV
             csv_utils.save_to_csv(formatted_data, csv_file_path, include_headers=False)
+
+            print(f"Fetched latest {ticker_symbol} Data")
         else:
             print("No data fetched.")
     except Exception as e:
