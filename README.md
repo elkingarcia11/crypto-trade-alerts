@@ -13,6 +13,7 @@ The Crypto Trade Alerts project is a utility tool designed to provide trading al
 7. [Financial Utils Module](#financial-utils-module)
 8. [Trading Utils Module](#trading-utils-module)
 9. [Twitter Utils Module](#twitter-utils-module)
+9. [Deployment](#deployment)
 10. [Twitter Link](#twitter-link)
 
 ## Dependencies
@@ -63,11 +64,13 @@ The `trading_utils` module provides functions for implementing trading strategie
 
 The `twitter_utils` module provides functions for interacting with the Twitter API to post tweets.
 
+## Deployment
+
+The data is stored in a Google Cloud Storage bucket. This application uses a service account with permissions to retrieve and push data to the bucket. The program runs on Google Cloud Functions and is triggered hourly by Google Cloud Scheduler, which publishes messages to a Pub/Sub topic to initiate the function.
+
 ## Twitter Link
 
 Users can easily find and [follow us on Twitter for real-time alerts!](https://x.com/TheBitcoinAlert)
-
-
 
 
 
