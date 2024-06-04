@@ -18,7 +18,6 @@ def published_vwap_strategy(ticker_symbol):
     if latest_entry['Close'] < latest_entry['VWAP']:
         print("BUY")
         return 'BUY'
-        
     elif latest_entry['Close'] > latest_entry['VWAP']:
         print("SELL")
         return 'SELL'

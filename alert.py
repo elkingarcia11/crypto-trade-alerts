@@ -46,11 +46,21 @@ def alert(ticker_symbol):
     # Print the current date and time in UTC
     print("Current date and time in UTC:", utc_now)
 
-    if decision:
+    last_tweet = None
+    # Open the file in read mode
+    with open(f'data/{ticker_symbol}.txt', 'r') as file:
+        # Read the first line
+        last_tweet = file.readline()
+
+    if decision and decision not in last_tweet:
         decision = f"{utc_now}: " + decision
         # Tweet decision
         twitter_utils.tweet(decision)
+        # Update the file with the new decision
+        with open(f'data/{ticker_symbol}.txt', 'w') as file:
+            file.write(decision)
 
 
 # Example usage
-alert("BTC")
+#alert("BTC")
+
